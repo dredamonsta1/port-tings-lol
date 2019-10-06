@@ -1,12 +1,10 @@
-import React, {
-    useState,
-    useEffect
-} from 'react';
-import Rapper from '../Rappers';
+import React, {useState} from 'react';
+import {Rapper} from '../Rappers';
 
 
 export const Rappers = props => {
-        const [artistNames, setArtistNames] = useState([{
+        const [artistNames, setArtistNames] = useState([
+            {
                 id: 1,
                 Name: 'Jay-Z',
                 clout: 0,
@@ -59,7 +57,7 @@ export const Rappers = props => {
             console.log(artist, clout);
             setArtistNames(
                 artistNames.map(artistName => {
-                    if (artistName.Name === lit) {
+                    if (artistName.Name === artist) {
                         artistName.clout++;
                     }
                     return {
@@ -74,7 +72,7 @@ export const Rappers = props => {
             console.log(artist, clout);
             setArtistNames(
                 artistNames.map(artistName => {
-                    if (artistName.Name === lit) {
+                    if (artistName.Name === artist) {
                         artist.clout--;
                     }
                     return {
@@ -85,22 +83,24 @@ export const Rappers = props => {
             );
         }
 
-        return ( <div style = {{display: "flex", flexDirection: "column"}} > {
-                artistNames.map(artistName => {
-                    return ( 
+        return ( <div style = {{display: "flex", flexDirection: "column"}} > 
+            {artistNames.map(artistName => {
+                return ( 
                         < Rapper 
-                        lit = {artistName.Name}
-                        clout = {artistName.clout}
+                        lit={artistName.Name}
+                        clout={artistName.clout}
+                        upClout={upClout}
+                        downClout={downClout}
 
-                    )
-                })
-            }
-
-
+                        />
+                    );
+                })}
+            ;
             </div> >
 
 
+            
+        {}
 
-
-        )
-    }
+    );
+}

@@ -1,43 +1,46 @@
 import React from 'react';
 import './Rappers.css';
-import PropTypes from 'prop-types';
+// import {Rappers} from './components/RapperList'
+// import PropTypes from 'prop-types';
 
 
 
 
-export const Rapper = function(props) {
+export const Rapper = (props) => {
     return (
       // Some other JSX
-      <>
-      <div className="Rapper">
-      <span>{props.Name}</span>
-      <span>{props.Face}</span>
-        
-      </div>
-    
-      <div className="Face">
-      <span>{props.Face}</span>
-      
-      
-      </div>
-      
-      </>
-      
-    );
+      <div className="fiveByFourList" style= {{display: "flex"}}>
+        <picture style= {{flex: 3, margin: 30}}>IMG</picture>
+        <h5 style= {{flex:3, margin: 30}}>{props.Name}</h5>
+        <h5 style= {{flex:6, margin: 30}}>{props.clout}</h5>
+
+        <button onClick={() => props.upClout(props.Name, props.clout )} style={{flex: 3,
+        borderTopLeftRadius: 50,
+      borderTopRightRadius: 50,
+    borderBottomLeftRadius: 50,
+  borderBottomRightRadius: 50,
+margin: 30,
+backgroundColor: 'green'}}>
+
+Clout</button>
+
+
+        <button onClick={() => props.downClout(props.Name, props.clout )} style={{flex: 3,
+        borderTopLeftRadius: 50,
+      borderTopRightRadius: 50,
+    borderBottomLeftRadius: 50,
+  borderBottomRightRadius: 50,
+margin: 30,
+backgroundColor: 'red'}}>
+
+Cap</button>
+       
+      </div>      
+    )
   }
 
-  Rapper.propTypes={
-      Name: PropTypes.string.isRequired,
-      // Face: PropTypes.
-  };
+  
 
-
-
-
-// export const Raps = (props) => (
-//         // Some other JSX
-//         <div>Top Nine in the culture</div>
-//   );
 
 
   export default Rapper;
