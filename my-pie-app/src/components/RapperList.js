@@ -60,10 +60,7 @@ export const Rappers = props => {
                     if (artistName.Name === artist) {
                         artistName.clout++;
                     }
-                    return {
-                        Name: artistName.Name,
-                        clout: artistName.clout
-                    };
+                    return {Name: artistName.Name,clout: artistName.clout};
                 })
             );
         }
@@ -73,21 +70,20 @@ export const Rappers = props => {
             setArtistNames(
                 artistNames.map(artistName => {
                     if (artistName.Name === artist) {
-                        artist.clout--;
+                        artistName.clout--;
                     }
-                    return {
-                        Name: artistName.Name,
-                        clout: artistName.clout
-                    };
+                    return {Name: artistName.Name,clout: artistName.clout};
                 })
             );
         }
 
-        return ( <div style = {{display: "flex", flexDirection: "column"}} > 
+        return ( 
+            <>
+            <div style={{ display: "flex", flexDirection: "column" }} > 
             {artistNames.map(artistName => {
                 return ( 
                         < Rapper 
-                        lit={artistName.Name}
+                        artist={artistName.Name}
                         clout={artistName.clout}
                         upClout={upClout}
                         downClout={downClout}
@@ -98,9 +94,11 @@ export const Rappers = props => {
             ;
             </div> >
 
+            </>
+
 
             
-        {}
+        
 
     );
 }

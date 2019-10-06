@@ -11,10 +11,10 @@ export const Rapper = (props) => {
       // Some other JSX
       <div className="fiveByFourList" style= {{display: "flex"}}>
         <picture style= {{flex: 3, margin: 30}}>IMG</picture>
-        <h5 style= {{flex:3, margin: 30}}>{props.Name}</h5>
+        <h5 style= {{flex:3, margin: 30}}>{props.artist}</h5>
         <h5 style= {{flex:6, margin: 30}}>{props.clout}</h5>
 
-        <button onClick={() => props.upClout(props.Name, props.clout )} style={{flex: 3,
+        <button onClick={() => props.upClout(props.artist, props.clout )} style={{flex: 3,
         borderTopLeftRadius: 50,
       borderTopRightRadius: 50,
     borderBottomLeftRadius: 50,
@@ -25,7 +25,7 @@ backgroundColor: 'green'}}>
 Clout</button>
 
 
-        <button onClick={() => props.downClout(props.Name, props.clout )} style={{flex: 3,
+        <button onClick={() => props.downClout(props.artist, props.clout )} style={{flex: 3,
         borderTopLeftRadius: 50,
       borderTopRightRadius: 50,
     borderBottomLeftRadius: 50,
