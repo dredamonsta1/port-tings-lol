@@ -14,7 +14,7 @@ export const Rapper = (props) => {
         <h5 style= {{flex:3, margin: 30}}>{props.artist}</h5>
         <h5 style= {{flex:6, margin: 30}}>{props.clout}</h5>
 
-        <button onClick={() => props.upClout(props.artist, props.clout )} style={{flex: 3,
+        <button onClick={() => props.upClout(props.artist, true )} style={{flex: 3,
         borderTopLeftRadius: 50,
       borderTopRightRadius: 50,
     borderBottomLeftRadius: 50,
@@ -25,13 +25,13 @@ backgroundColor: 'green'}}>
 Clout</button>
 
 
-        <button onClick={() => props.downClout(props.artist, props.clout )} style={{flex: 3,
+        <button disabled={props.clout===0}onClick={() => props.downClout(props.artist, false )} style={{flex: 3,
         borderTopLeftRadius: 50,
       borderTopRightRadius: 50,
     borderBottomLeftRadius: 50,
   borderBottomRightRadius: 50,
 margin: 30,
-backgroundColor: 'red'}}>
+backgroundColor: 'pink'}}>
 
 Cap</button>
        
