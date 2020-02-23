@@ -20,7 +20,7 @@ export const Rapper = (props) => {
     borderBottomLeftRadius: 50,
   borderBottomRightRadius: 50,
 margin: 30,
-backgroundColor: 'green'}}>
+backgroundColor: '#babde6'}}>
 
 Clout</button>
 
@@ -31,7 +31,7 @@ Clout</button>
     borderBottomLeftRadius: 50,
   borderBottomRightRadius: 50,
 margin: 30,
-backgroundColor: 'pink'}}>
+backgroundColor: '#998d76'}}>
 
 Cap</button>
        

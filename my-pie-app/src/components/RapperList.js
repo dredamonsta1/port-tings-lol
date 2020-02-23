@@ -62,48 +62,26 @@ export const Rappers = props => {
                         } else if (clout > 0) {
                             clout -= 1;
                         }
-                        
-                    
                     }
-                    return {name: artistName.name,clout: artistName.clout};
+                    return {name: artistName.name, clout: clout};
                 })
             );
         }
-
-        // function downClout(artist, clout) {
-        //     console.log(artist, clout);
-        //     setArtistNames(
-        //         artistNames.map(artistName => {
-        //             if (artistName.name === artist) {
-        //                 artistName.clout--;
-        //             }
-        //             return {name: artistName.name,clout: artistName.clout};
-        //         })
-        //     );
-        // }
-
         return ( 
             <>
             <div style={{ display: "flex", flexDirection: "column" }} > 
             {artistNames.map(artistName => {
                 return ( 
-                        < Rapper 
+                        <Rapper 
                         artist={artistName.name}
                         clout={artistName.clout}
                         upClout={upClout}
                         downClout={upClout}
                         key={artistName.id}
-
                         />
                     );
                 })};
             </div> >
-
-            </>
-
-
-            
-        
-
+         </>      
     );
-}
+};
