@@ -68,7 +68,7 @@ export const Rappers = props => {
             );
         }
         return ( 
-            <>
+            <React.Fragment>
             <div style={{ display: "flex", flexDirection: "column" }} > 
             {artistNames.map(artistName => {
                 return ( 
@@ -82,6 +82,6 @@ export const Rappers = props => {
                     );
                 })};
             </div> >
-         </>      
+         </React.Fragment>      
     );
 };
