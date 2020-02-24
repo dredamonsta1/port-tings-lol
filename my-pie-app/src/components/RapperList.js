@@ -6,99 +6,82 @@ export const Rappers = props => {
         const [artistNames, setArtistNames] = useState([
             {
                 id: 1,
-                Name: 'Jay-Z',
+                name: 'Jay-Z',
                 clout: 0,
             },
             {
                 id: 2,
-                Name: 'Drake',
+                name: 'Drake',
                 clout: 0,
             },
             {
                 id: 3,
-                Name: 'J Cole',
+                name: 'J Cole',
                 clout: 0,
             },
             {
                 id: 4,
-                Name: 'Kendrik Lamar',
+                name: 'Kendrik Lamar',
                 clout: 0,
             },
             {
                 id: 5,
-                Name: 'Young Thug',
+                name: 'Young Thug',
                 clout: 0,
             },
             {
                 id: 6,
-                Name: 'Pusha T',
+                name: 'Pusha T',
                 clout: 0,
             },
             {
                 id: 7,
-                Name: 'Cardi B',
+                name: 'Cardi B',
                 clout: 0,
             },
             {
                 id: 8,
-                Name: 'Kanye West',
+                name: 'Kanye West',
                 clout: 0,
             },
             {
                 id: 9,
-                Name: 'ScHoolboyQ',
+                name: 'ScHoolboyQ',
                 clout: 0
             }
         ]);
 
-
-
-        function upClout(artist, clout) {
-            console.log(artist, clout);
+        function upClout(artist, topFifty) {
+            console.log(artist);
             setArtistNames(
                 artistNames.map(artistName => {
-                    if (artistName.Name === artist) {
-                        artistName.clout++;
+                    let clout = artistName.clout;
+                    if (artistName.name === artist) {
+                        if (topFifty) {
+                            clout +=1;
+                        } else if (clout > 0) {
+                            clout -= 1;
+                        }
                     }
-                    return {Name: artistName.Name,clout: artistName.clout};
+                    return {name: artistName.name, clout: clout};
                 })
             );
         }
-
-        function downClout(artist, clout) {
-            console.log(artist, clout);
-            setArtistNames(
-                artistNames.map(artistName => {
-                    if (artistName.Name === artist) {
-                        artistName.clout--;
-                    }
-                    return {Name: artistName.Name,clout: artistName.clout};
-                })
-            );
-        }
-
         return ( 
-            <>
+            <React.Fragment>
             <div style={{ display: "flex", flexDirection: "column" }} > 
             {artistNames.map(artistName => {
                 return ( 
-                        < Rapper 
-                        artist={artistName.Name}
+                        <Rapper 
+                        artist={artistName.name}
                         clout={artistName.clout}
                         upClout={upClout}
-                        downClout={downClout}
-
+                        downClout={upClout}
+                        key={artistName.id}
                         />
                     );
-                })}
-            ;
+                })};
             </div> >
-
-            </>
-
-
-            
-        
-
+         </React.Fragment>      
     );
-}
+};
